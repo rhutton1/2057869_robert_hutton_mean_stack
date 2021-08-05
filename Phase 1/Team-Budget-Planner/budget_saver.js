@@ -9,7 +9,7 @@ function pushData() {
     // form data into a new obj and add obj to array
     let newEntry = {client: clientName, project: projectName, money:budget};
     var Entries = []
-    Entries = JSON.parse(localStorage.getItem("entries") || "[]")
+    Entries = JSON.parse(localStorage.getItem("entries"));
     Entries.push(newEntry);
 
     console.log(Entries);
