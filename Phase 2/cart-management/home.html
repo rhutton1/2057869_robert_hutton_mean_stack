@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Manager</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="typescript/cartcheckout.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
+        .card{
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        .form-control{
+            margin-bottom: 10px;
+        }
+        body{
+           background-color: rgb(136, 136, 136);
+        }
+        a:hover{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <header style="text-align: center;">
+        <h1>Shopping Cart</h1>
+        <div>
+            <p>Cart Size:</p>
+            <p id="cartSize"></p>
+        </div>
+        <div>
+            <a href="checkout.html">Checkout</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://www.joyofbaking.com/images/facebook/whitesandwichbread.jpg" alt="image failed to load">
+                    <div class="card-body">
+                      <h4 class="card-title">Bread</h4>
+                      <p class="card-text">
+                        Price: $2.49
+                      </p>
+                      <form>
+                        <label>Quantity</label>
+                        <input class="form-control" type="text" value="1" id="breadQuan">
+                        <input class="btn btn-primary" value="Add to cart" onclick="addToCart('Bread',2.49, breadQuan.value)"/>
+                      <form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=%5B800%2C600%5D&w=1600&h=800&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2017%2F08%2Fswiss-cheese-power-food-ft-blog0817.jpg" alt="image failed to load">
+                    <div class="card-body">
+                      <h4 class="card-title">Cheese</h4>
+                      <p class="card-text">
+                        Price: $4.99
+                      </p>
+                      <form>
+                        <label>Quantity</label>
+                        <input class="form-control" type="text" value="1" id="cheeseQuan">
+                        <input class="btn btn-primary" value="Add to cart" onclick= "addToCart('Cheese',4.99, cheeseQuan.value)"/>
+                      <form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://i5.walmartimages.com/asr/c488097d-cd02-491d-9ba1-06414593dad5_3.86f74d35f449351329d6723151047398.jpeg" alt="image failed to load">
+                    <div class="card-body">
+                      <h4 class="card-title">Ground Beef</h4>
+                      <p class="card-text">
+                        Price: $8.99
+                      </p>
+                      <form>
+                        <label>Quantity</label>
+                        <input class="form-control" type="text" value="1" id="grndbeefQuan">
+                        <input class="btn btn-primary" value="Add to cart"onclick= "addToCart('Ground Beef', 8.99, grndbeefQuan.value)"/>
+                      <form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://assets.epicurious.com/photos/578d1f9698e0fc875500146e/master/pass/garlic-roasted-chicken-breasts.jpg" alt="image failed to load">
+                    <div class="card-body">
+                      <h4 class="card-title">Chicken</h4>
+                      <p class="card-text">
+                        Price: $11.49
+                      </p>
+                      <form>
+                        <label>Quantity</label>
+                        <input class="form-control" type="text" value="1" id="chickenQuan">
+                        <input class="btn btn-primary" value="Add to cart" onclick= "addToCart('Chicken',11.49, chickenQuan.value)"/>
+                      <form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://solidstarts.com/wp-content/uploads/when-can-babies-eat-eggs.jpg" alt="image failed to load">
+                    <div class="card-body">
+                      <h4 class="card-title">Eggs</h4>
+                      <p class="card-text">
+                        Price: $1.99
+                      </p>
+                      <form>
+                        <label>Quantity</label>
+                        <input class="form-control" type="text" value="1" id="eggsQuan">
+                        <input class="btn btn-primary" value="Add to cart" onclick="addToCart('Eggs',1.99, eggsQuan.value)"/>
+                      <form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://cdn-prod.medicalnewstoday.com/content/images/articles/323/323169/greek-yoghurt-in-bowl.jpg" alt="image failed to load">
+                    <div class="card-body">
+                      <h4 class="card-title">Yogurt</h4>
+                      <p class="card-text">
+                        Price: $3.49
+                      </p>
+                      <form>
+                        <label>Quantity</label>
+                        <input class="form-control" type="text" value="1" id="yogurtQuan">
+                        <input class="btn btn-primary" value="Add to cart" onclick="addToCart('Yogurt',3.49, yogurtQuan.value)"/>
+                      <form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </div>
+</body>
+</html>
