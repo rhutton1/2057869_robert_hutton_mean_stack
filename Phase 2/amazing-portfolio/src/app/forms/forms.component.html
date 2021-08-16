@@ -1,0 +1,56 @@
+<div>
+    <form *ngIf="loginFlag" [formGroup]="loginRef" (ngSubmit)="checkUser()">
+        <h3>Login</h3>
+        <label>Username</label>
+        <input type="text" formControlName="user"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="pass"/><br/>
+        <input type="submit" value="Login" [disabled]="loginRef.invalid"/>
+        <input type="reset" value="reset"/><br/>
+        <label>Not a Member? Sign Up HERE:</label>
+        <input type="button" value="Sign Up" (click)="switchToSignUp()"/><br/>
+        {{er_msg}}
+    </form>
+
+    <form *ngIf="signUpFlag" [formGroup]="signUpRef" (ngSubmit)="signUpNewUser()">
+        <h3>Sign Up</h3>
+        <label>First Name</label>
+        <input type="text" formControlName="fname"/><br/>
+        <label>Last Name</label>
+        <input type="text" formControlName="lname"/><br/>
+        <label>Username</label>
+        <input type="text" formControlName="newUser"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="newPass"/><br/>
+        <input type="submit" value="Register" [disabled]="signUpRef.invalid"/>
+        <input type="reset" value="reset"/><br/>
+        <label>Already a Member?</label>
+        <input type="button" value="Login" (click)="switchToSignUp()"/>
+    </form>
+
+    <form *ngIf="contactFlag" [formGroup]="contactList" (ngSubmit)="saveContact()">
+        <h3>My Contact Portfolio</h3>
+        <h4>Welcome {{userFname}} {{userLname}}</h4>
+        <label>Contact Name</label>
+        <input type="text" formControlName="contactName"/><br/>
+        <label>Phone Number</label>
+        <input type="text" formControlName="contactPhoneNumber"/><br/>
+        <input type="submit" value="Save Contact" [disabled]="contactList.invalid"/>
+        <input type="reset" value="reset"/><br/>
+        <input type="button" value="Show Contact Details" (click)="showContactTable()"/>
+        <br/>
+
+        <table *ngIf="showTableFlag" border="1px">
+            <tr>
+                <th>Contact Name</th>
+                <th>Phone Number</th>
+            </tr>
+            <tr *ngFor="let ct of contactStorage" >
+                <td>{{ct.name}}</td>
+                <td>{{ct.phoneNum}}</td>
+            </tr>
+        </table>
+
+    </form>
+
+</div>
