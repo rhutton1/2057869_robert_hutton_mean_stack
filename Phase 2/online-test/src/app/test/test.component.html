@@ -1,0 +1,25 @@
+<div>
+
+    <mat-toolbar color="accent">
+        <h1 style="margin: 0 auto;">Online Test!</h1>
+    </mat-toolbar>
+
+    <div>
+        <form style="text-align: center;" [formGroup]="myTest">
+            <div *ngFor="let q of myQuestions">
+                <p >{{q.question}}</p>
+                <input type="radio" formControlName={{q.question}} value={{q.ans1}} ngModel required/><span id={{q.ans1}}>{{q.ans1}}</span><br/>
+                <input type="radio" formControlName={{q.question}} value={{q.ans2}} ngModel required/><span id={{q.ans2}}>{{q.ans2}}</span><br/>
+                <input type="radio" formControlName={{q.question}} value={{q.ans3}} ngModel required/><span id={{q.ans3}}>{{q.ans3}}</span><br/>
+                <input type="radio" formControlName={{q.question}} value={{q.ans4}} ngModel required/><span id={{q.ans4}}>{{q.ans4}}</span>
+                <hr/>
+            </div>
+            <button mat-raised-button color="accent" style="margin-bottom: 5px;" [disabled]="myTest.invalid" (click)="submit()" >Submit</button>
+        </form>
+    </div>
+
+    <div style="text-align: center; font-size: x-large; font-family: Arial, Helvetica Neue, sans-serif;">
+        {{msg}}
+    </div>
+
+</div>

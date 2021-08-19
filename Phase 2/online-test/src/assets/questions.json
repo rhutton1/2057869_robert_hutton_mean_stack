@@ -1,0 +1,12 @@
+[
+    {"question":"How many legs does a spider have?","ans1":"Five","ans2":"Three","ans3":"Eight","ans4":"Six","correctAns":"Eight"},
+    {"question":"What is the name of the toy cowboy in Toy Story?","ans1":"Woody","ans2":"Buzz","ans3":"Mr.Potatohead","ans4":"Rex","correctAns":"Woody"},
+    {"question":"What is the color of an emerald?","ans1":"Blue","ans2":"Green","ans3":"Red","ans4":"Yellow","correctAns":"Green"},
+    {"question":"What is something you hit with a hammer?","ans1":"Wood","ans2":"Your Friend","ans3":"A Nail","ans4":"Your Hand","correctAns":"A Nail"},
+    {"question":"What’s the name of a place you go to see lots of animals?","ans1":"Zoo","ans2":"Concert","ans3":"School","ans4":"Home","correctAns":"Zoo"},
+    {"question":"If you freeze water, what do you get?","ans1":"Nothing","ans2":"More Water","ans3":"Rocks","ans4":"Ice","correctAns":"Ice"},
+    {"question":"What type of fish is Nemo?","ans1":"Clownfish","ans2":"Shark","ans3":"Trout","ans4":"Bass","correctAns":"Clownfish"},
+    {"question":"What is a group of lions called?","ans1":"A Murder","ans2":"A Flock","ans3":"A Pride","ans4":"A Gang","correctAns":"A Pride"},
+    {"question":"Who wrote Hamlet?","ans1":"Edgar Allen Poe","ans2":"Ernest Hemingway","ans3":"Charles Dickens","ans4":"William Shakespeare","correctAns":"William Shakespeare"},
+    {"question":"A scientist who studies rocks is called a what?","ans1":"Rock Man","ans2":"Geologist","ans3":"Indiana Jones","ans4":"Paleontologist","correctAns":"Geologist"}
+]
