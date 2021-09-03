@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting with Socket</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        var socket = io();
+        socket.on("serverSent", (msg)=>{
+            console.log(msg);
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date+' '+time;
+            document.getElementById("serverResponseBox").innerHTML += "<h4>" + "(" + dateTime + ") " + "Server Message: " + msg + "</h4>";
+        })
+        function sendData(){
+            socket.emit("clientSent", "First Name:" + document.getElementById("fname").value + "\n" + "Message:" + document.getElementById("userMsg").value);
+        }
+    </script>
+</head>
+<body>
+    <h2>Chatting With Socket!</h2>
+    <form>
+        <label>First Name:</label>
+        <input type="text" id="fname"/><br/>
+        <hr/>
+        <label>Message:</label>
+        <textarea id="userMsg"></textarea><br/>
+        <hr/>
+        <input type="button" value="Submit Message" onclick="sendData()"/>
+        <br/><hr/>
+    </form>
+
+    <div id=serverResponseBox>
+    </div>
+</body>
+</html>
