@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting with Socket</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        var socket = io();
+        function sendData(){
+            socket.emit("clientSent", "{" + "\"userName\"" + ":" + "\"" + document.getElementById("userName").value + "\"" + " , " + "\"userMsg\"" +":" + "\"" + document.getElementById("userMsg").value + "\"" + "}");
+        }
+    </script>
+</head>
+<body>
+    <h2>Chatlog!</h2>
+    <form>
+        <label>Name:</label>
+        <input type="text" id="userName"/><br/>
+        <hr/>
+        <label>Message:</label>
+        <textarea id="userMsg"></textarea><br/>
+        <hr/>
+        <input type="button" value="Submit Message" onclick="sendData()"/>
+        <br/><hr/>
+    </form>
+</body>
+</html>
